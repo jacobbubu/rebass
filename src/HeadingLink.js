@@ -1,7 +1,6 @@
 
 import React from 'react'
 import Heading from './Heading'
-import mergeClassName from './util/mergeClassName'
 
 /**
  * Heading element with unstyled link. Useful for in-page navigation

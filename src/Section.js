@@ -2,7 +2,6 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
-import classNames from 'classnames/dedupe'
 import mergeClassName from './util/mergeClassName'
 
 /**

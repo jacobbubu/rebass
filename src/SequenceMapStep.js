@@ -2,7 +2,6 @@
 import React from 'react'
 import LinkBlock from './LinkBlock'
 import config from './config'
-import mergeClassName from './util/mergeClassName'
 
 /**
  * Subcomponent for use in SequenceMap
