@@ -9,6 +9,7 @@ import mergeClassName from './util/mergeClassName'
 
 const LinkBlock = ({
   Component,
+  is,
   ...props
 }, { rebass }) => {
   const sx = {
@@ -16,6 +17,7 @@ const LinkBlock = ({
     textDecoration: 'none',
     color: 'inherit'
   }
+  Component = Component || is
 
   return (
     <Base
@@ -28,11 +30,21 @@ const LinkBlock = ({
 
 LinkBlock.propTypes = {
   /** Root component - useful for use with react-router's Link component */
-  Component: React.PropTypes.node
+  is: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+    React.PropTypes.func
+  ]),
+  /** Alias for `is` prop */
+  Component: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+    React.PropTypes.func
+  ])
 }
 
 LinkBlock.defaultProps = {
-  Component: 'a'
+  is: 'a'
 }
 
 LinkBlock.contextTypes = {

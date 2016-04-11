@@ -17,7 +17,7 @@ const Tooltip = ({
 
   const css = `
     .Tooltip_box { display: none }
-    .Tooltip:hover .Tooltip-box { display: block }
+    .Tooltip:hover .Tooltip_box { display: block }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
   const sx = {
@@ -46,7 +46,7 @@ const Tooltip = ({
       left: '50%',
       border: '6px solid transparent',
       borderTopColor: colors.black,
-      transform: 'translate(-50%, 4px)'
+      transform: 'translate(-50%, 0)'
     }
   }
 
