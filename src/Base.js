@@ -122,5 +122,16 @@ Base.contextTypes = {
   rebass: React.PropTypes.object
 }
 
-export default Base
+const RadiumBase = (props, { Radium, ...context }) => {
+  if (Radium) {
+    return React.createElement(Radium(Base), props)
+  }
+  return Base(props, context)
+}
 
+RadiumBase.contextTypes = {
+  Radium: React.PropTypes.func,
+  rebass: React.PropTypes.object
+}
+
+export default RadiumBase
