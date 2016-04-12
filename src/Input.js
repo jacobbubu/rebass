@@ -28,7 +28,7 @@ const Input = ({
     backgroundColor,
     theme,
     inverted,
-    autofocus,
+    autoFocus,
     ...rootProps
   } = props
 
@@ -84,7 +84,7 @@ const Input = ({
         px={1}
         py={0}
         baseStyle={sx.input}
-        autofocus />
+        autoFocus={autoFocus} />
       {message && <Text small children={message} />}
     </Base>
   )
