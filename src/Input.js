@@ -1,4 +1,3 @@
-
 import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
@@ -17,20 +16,44 @@ const Input = ({
   message,
   hideLabel,
   children,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props.invalid || props['aria-invalid']
 
-  const {
-    rounded,
-    backgroundColor,
-    theme,
-    inverted,
-    autoFocus,
-    ...rootProps
-  } = props
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
 
   const sx = {
     root: {
@@ -45,6 +68,8 @@ const Input = ({
       width: '100%',
       height: scale[3],
       margin: 0,
+      paddingLeft: scale[1],
+      paddingRight: scale[1],
       color: 'inherit',
       backgroundColor: 'rgba(255, 255, 255, .25)',
       borderWidth: 1,
@@ -73,22 +98,12 @@ const Input = ({
         tagName='input'
         type={type}
         name={name}
-        rounded={rounded}
-        backgroundColor={backgroundColor}
-        theme={theme}
-        inverted={inverted}
-        m={0}
-        mx={0}
-        my={0}
-        p={0}
-        px={1}
-        py={0}
-        baseStyle={sx.input}
-        autoFocus={autoFocus} />
+        baseStyle={sx.input} />
       {message && <Text small children={message} />}
     </Base>
   )
 }
+
 
 Input.propTypes = {
   /** Label for form element */
